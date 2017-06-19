@@ -1,0 +1,263 @@
+﻿@font-face {
+    font-family: myFirstFont;
+    src: url(../CGI%20CATS_files/sansation_light.woff);
+}
+
+/*BACKGROUND COLOR OF ALL PAGES*/
+body{
+}
+
+hr {
+    padding: 0px;
+}
+
+/*REMOVE IE x in all inputs text fields*/
+input::-ms-clear {display: none; width:0; height:0;}
+
+
+.logged-out-body {
+    background: url('../Content/Images/Connectors_Beet_Cherry_PumpkinWEB_1.png');
+    background-size: cover;
+}
+/*.login-form {
+    background-color: #373839;
+    padding: 10px;
+}*/
+.login-form-actions, .login-form-actions a, .login-form-actions a:visited {
+    color: #4380ed;
+    min-width:200px;
+}
+
+
+.login-button {
+    background-color:#e31937;
+    color: #ffffff;
+    width:100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.login-button:hover {
+    background-color:#ac162c;
+     color: #ffffff;
+ }
+.login-button:active {
+    background-color:#ac162c;
+     color: #ffffff;
+ }
+
+.login-button:focus {
+    background-color:#ac162c;
+     color: #ffffff;
+ }
+
+
+.login-error {
+    color: #e31937;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.error-icon {
+    top: 5px;
+    font-size: 1.5em;
+    color: #e31937;
+}
+
+.login-form {
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	width: 100%;
+	height: 253px;
+}
+
+
+
+.login-form-header {
+	background-color: #455A64;
+	padding-top: 12px;
+	padding-right: 2px;
+	padding-bottom: 12px;
+	padding-left: 2px;
+	text-align: left;
+	color: rgba(255,255,255,0.94);
+	font-size: 20px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	border-radius: 0px 2px 0px 0px;
+	border-width: 0px;
+	text-indent: 21px;
+	letter-spacing: 2px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+   
+
+
+.login-content{
+	box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.12);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+	background-color: #FAFAFA;
+	margin-top: -1px;
+	-webkit-box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.12);
+	/* [disabled]border: 1px solid rgba(0,0,0,0.06); */
+}
+
+.login-content:hover{
+	-webkit-box-shadow: 0px 20px 44px 0px hsla(0,0%,0%,0.14);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow: 0px 0px 7px 4px rgba(128, 128, 128,0.8); /* Firefox 3.5 - 3.6 */
+	box-shadow: 0px 20px 44px 0px hsla(0,0%,0%,0.14);
+	margin-top: -5px;
+	background-repeat: no-repeat;
+	background-clip: content-box;
+	background-origin: content-box;
+	border: 1px solid rgba(243,243,243,0.06);
+}
+
+
+
+
+.login-reset-form {
+  padding: 10px;
+  -webkit-border-top-right-radius-: 0px;
+  -webkit-border-top-left-radius-: 0px;
+  -webkit-border-bottom-right-radius-: 10px;
+  -webkit-border-bottom-left-radius-: 10px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px; 
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;  
+  width:100%;
+  background-color:rgba(229,236,239,0.8);
+}
+
+.reset-form-header
+{
+  
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+     padding-right: 2px;
+    padding-left: 2px;
+    text-align: center;
+    color: #000;
+ 
+    width:100%;
+   
+}
+
+.login-container{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 127px;
+	width: 437px;
+	padding-left: 38px;
+}
+
+.login-reset-container{
+   max-width:600px;
+   margin-right: auto; 
+   margin-left: auto; 
+}
+
+.reset-label {
+
+    color:#000000;
+}
+
+
+/*round corners for success message*/
+.reset_password_success{
+
+  -webkit-border-radius: 5px;  
+  -moz-border-radius: 5px;
+  border-radius:0px;  
+  border:solid 0px white;
+}
+
+
+
+.undernav{
+    /*cgi red*/
+    background-color:#e31937;
+    display:block;
+    width: 100%;
+}
+
+/*add this class to the main nav bar for the sub navbar*/
+.catsbar{
+margin-bottom:15px;
+}
+/*top margin for login form*/
+.login_margin{
+
+margin-top:35px;
+}
+
+/*padding for the top of warning container divs*/
+.warnrow{
+padding-top:10px;
+
+}
+
+/*margin-on bottom of inputs*/
+.reset-input{
+margin-bottom:8px;
+}
+
+.form-divider{
+    border-top:solid 1px #cfd8dc;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.row-nomargin{
+    margin-left:0px;
+    margin-right:0px;
+    
+}
+.reset-label-required{
+
+}
+
+.reset-label-required:after {
+    content: "*";
+    color: red;
+    float:right;
+}
+
+/*expanding outer div hide the scrollbar*/
+.reset-scroll-container {
+    /*overflow-y:scroll;*/
+    overflow-x: hidden;
+    max-height: 550px;
+}
+
+
+
+
+.notificationClass{
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+}
+
+/*Overiding Smart admin Classes for Login page*/
+.menu-on-top #main {
+    margin-left: 0!important;
+   margin-top: 20px!important; 
+}
+.fixed-header #main {
+}

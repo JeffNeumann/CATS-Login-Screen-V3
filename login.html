@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://cgicatsuidev.cgicledev.com/Shared/Login -->
+<html class="k-webkit k-webkit58 gr__cgicatsuidev_cgicledev_com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CGI CATS</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="CATS_files/css.css" rel="stylesheet">
+<link href="CATS_files/smartadmincss.css" rel="stylesheet">
+<link rel="stylesheet" href="CATS_files/smartadmin-overrides.css">
+<link href="CATS_files/Login.css" rel="stylesheet">
+<!-- FAVICONS -->
+<link rel="shortcut icon" href="https://cgicatsuidev.cgicledev.com/Content/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://cgicatsuidev.cgicledev.com/Content/images/favicon.ico" type="image/x-icon">
+
+<!-- GOOGLE FONT -->
+<link rel="stylesheet" href="CATS_files/css(1)">
+<link rel="apple-touch-icon" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/sptouch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/touch-icon-ipad-retina.png">
+
+<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!-- Startup image for web apps -->
+<link rel="apple-touch-startup-image" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+<link rel="apple-touch-startup-image" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+<link rel="apple-touch-startup-image" href="https://cgicatsuidev.cgicledev.com/SmartAdminCore/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+</head>
+<body class="desktop-detected fixed-header fixed-page-footer menu-on-top smart-style-1 fixed-navigation fixed-ribbon logged-out-body" data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+<!-- fixed-header fixed-navigation -->
+
+<div id="sessionTimeoutWindow"></div>
+<div id="notificationWindow"></div>
+<div id="NotificationMessage"></div>
+<div id="customSessionTimeoutWindow"></div>
+<input type="hidden" id="forgeryToken" value="yJVk-2M3u_ynqH8FKrbjM1uMb0hCgj-CW9KZgzFr7qOgHu6uwyNfmznNRsSgxGKzzpRTNm5jLV8OomxWMNN3UmaZDVM1:CI3RyvpANTPpd5vN8zVxSaJ-u4IR_DHF2GlW3-FyaLDW_gMvftd8Em1fLKQN9j042UAXrGKZ2nn9icPoZoXTEeEbZAU1">
+
+<!-- HEADER -->
+<header id="header" data-id="header">
+  <div id="logo-group"> 
+    <!-- PLACE YOUR LOGO HERE --> 
+    <span id="logo"> <img src="CATS_files/cgi-cats-logo.png" alt="CATS" width="110" height="28"> </span> 
+    <!-- END LOGO PLACEHOLDER --> 
+  </div>
+  
+  
+  
+  
+  
+  
+  
+     <!-- User info -->
+        <!-- pulled right: nav area -->
+        <div class="pull-right">
+
+            <!-- end user info -->
+            <!-- logout button -->
+            <div data-id="logoutContainer" class="btn-header transparent pull-right hidden">
+                <span> <a id="logout"><i class="fa fa-sign-out"></i></a> </span>
+                
+                
+            </div>
+            <!-- end logout button -->
+            <!-- fullscreen button -->
+            <div id="fullscreen" class="btn-header transparent pull-right hidden-xs">
+                <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+            </div>
+            <!-- end fullscreen button -->
+        </div>
+
+
+        <!-- collapse menu button -->
+        <div id="hide-menu" class="btn-header pull-right">
+            <span data-id="SmallMenu" style="display:none;"> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+        </div>
+
+
+        <div class="pull-right switch-user-div">
+
+            <!--Swtch Accounts Proxies-->
+            <ul class="top-level-menu main-navigation up" data-id="choosing-menu" data-bind="with: choosingMenuVm">
+
+                <li style="display:none;" title="Proxy Is Active" data-bind="visible: CanShowProxyIcon()">
+                    <div class="account-arrows"> <span class="glyphicon glyphicon-random" aria-hidden="true"></span></div>
+                </li>
+
+                <li style="display:none;" data-bind="visible:  CanShowChoosingMenu, event: { mouseover: ShowParent, mouseout: HideParent }">
+                    <div class="account-proxy-main"><i class="fa fa-user" aria-hidden="true"></i> <span data-id="userName" data-bind="text:UserName" class="switch-accounts-text"></span></div>
+
+                    <ul class="second-level-menu" data-bind="visible: IsParentVisible()">
+
+                        <li data-bind="visible: IsManageProxyVisible">
+                            <div>
+                                <a href="https://cgicatsuidev.cgicledev.com/Shared/Login#" data-id="lnkManageProxy" data-bind="click: NavigateToProxy"><span aria-hidden="true"></span> Manage Proxy </a>
+                            </div>
+                        </li>
+
+                        <li data-bind="visible: HasMultiAccount(),event: { mouseover: ShowAccountChild, mouseout: HideAccountChild } ">
+                            <div>
+                                <a href="https://cgicatsuidev.cgicledev.com/Shared/Login#"><span class="glyphicon glyphicon-triangle-left drop-left-arrow" aria-hidden="true"></span> Accounts <span class="glyphicon glyphicon-triangle-right drop-right-arrow" aria-hidden="true"></span></a>
+                            </div>
+                            <ul class="third-level-menu scroll-style-1" data-bind="foreach: AccountList,visible: IsAccountVisible()">
+                                <li data-bind="text: Name,click: ChooseAccount.bind($data, $parents[0].ProxyList)" class="switch-ap" style="padding:5px;"><a href="https://cgicatsuidev.cgicledev.com/Shared/Login#" data-bind="text: Name,click: ChooseAccount"></a></li>
+                            </ul>
+                        </li>
+
+                        <li data-bind="visible: HasMultiProxy(), event: { mouseover: ShowProxyChild, mouseout: HideProxyChild }" style="border-bottom:solid 1px #445862">
+                            <div>
+                                <a href="https://cgicatsuidev.cgicledev.com/Shared/Login#"><span class="glyphicon glyphicon-triangle-left drop-left-arrow" aria-hidden="true"></span> Proxies <span class="glyphicon glyphicon-triangle-right drop-right-arrow" aria-hidden="true"></span></a>
+                            </div>
+                            <ul class="third-level-menu scroll-style-1" data-bind="foreach: ProxyList,visible: IsProxyVisible()">
+                                <li data-bind="html: Name,click: ToggleProxy" class="switch-ap" style="padding:5px;"><a href="https://cgicatsuidev.cgicledev.com/Shared/Login#" data-bind="html: Name,click: ToggleProxy"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--end new menu try-->
+
+        </div>
+        <!-- end collapse menu -->
+        <!-- end pulled right: nav area -->
+  
+  
+  
+  
+  
+  
+</header>
+
+<!-- END HEADER --> 
+<!-- Left panel : Navigation area --> 
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel"> 
+  
+  <!-- NAVIGATION : This navigation is also responsive-->
+  <nav>
+    <ul data-id="App_Menu">
+      <li class="dropdown hidden" data-menudropdown="y" data-id="AppRouter_History"> <a href="javascript:void(0);" data-id="OpenPages" class="dropdown-toggle" style="width:135px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Open Pages"> <span style="vertical-align:middle"><i class="fa fa-lg fa-fw fa-history"></i></span> <span class="menu-item-parent" style="vertical-align:middle;">Open Pages</span> <span data-bind="visible: Tabs.length &gt; 0" class="badge inbox-badge opcount" style="display: none;"> <span data-bind="text: Tabs.length">0</span> </span> </a>
+        <ul class="dropdown-menu  open-pages-menu-scroll k-widget k-listview" data-role="listview" data-template="open_item" data-bind="source: Tabs" role="listbox">
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!-- END NAVIGATION --> 
+</aside>
+<script type="text/x-kendo-template" id="open_item">
+        <li>
+            <a href="/#:ID#" data-clientside="y" class="list-group-item">
+                <span data-bind="text: Title" class="apphost-drop-title"></span>&nbsp;
+                <span data-bind="text: SubTitle" class="apphost-drop-subtitle"></span>
+            </a>
+        </li>
+    </script> 
+<!-- MAIN PANEL -->
+<div id="main" role="main" data-id="ribbon_view"> 
+  <!-- RIBBON --> 
+  <script type="text/x-kendo-template" id="template_ribbon">
+            <div data-id="ribbon">
+                <span class="ribbon-button-alignment">
+                    <!-- collapse menu button -->
+                    <span><span> <a href="javascript:void(0);" class="btn btn-ribbon" data-action="togglePageListMenu" title="Toggle Page List Menu"><i class="fa fa-exchange"></i></a> </span></span>
+                </span>
+                <span>
+                    <!-- breadcrumb -->
+                    <a href="javascript:void(0);" data-action="togglePageListMenu" title="Toggle Page List Menu">
+                        <span class="breadcrumb">
+                            <span data-bind="text: getTabTitle()" class="top-tab-title"></span>
+                            <span data-id="TabSubTitle" data-bind="text: getTabSubTitle()" class="top-tab-subtitle"></span>
+                        </span>
+                    </a>
+                    <!-- end breadcrumb -->
+                </span>
+                <div class="pull-right">
+                    <button data-id="addAndCloseButton" class="rightRibbonButtons" title="Add & Close"><span class="hide-when-small">Add & Close</span></button>
+                    <button data-id="addButton" class="rightRibbonButtons" title="Add"><span class="hide-when-small">Add</span></button>
+                    <button data-id="updateAndCloseButton" class="rightRibbonButtons" title="Update & Close"><span class="hide-when-small">Update & Close</span></button>
+                    <button data-id="updateButton" class="rightRibbonButtons" title="Update"><span class="hide-when-small">Update</span></button>
+                </div>
+                <div class="pull-right">
+                    <button data-id="closePageButton" class="rightRibbonButtons" title="Close Page" href="javascript:void(0);"><i class="fa fa-times"></i><span class="hide-when-small">&nbsp;Close</span></button>
+                </div>
+
+
+        </script> 
+  <!-- END RIBBON --> 
+  <!-- MAIN CONTENT -->
+  <div id="content">
+    <div data-id="AppRouter_LoadingMessage" style="display: none;"></div>
+    <div data-id="AppRouter_TabContentContainer">
+      <div>
+        <div data-role="page" data-id="Page_CATS_Sample2">
+          <div role="form" class="login_margin">
+            <div data-id="fieldsContainer" data-bind="visible: LoginModel.notLoggedIn" style="height: 611px;">
+              <div class="center-block">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4  col-lg-4 col-lg-offset-4">
+                    <div class="login-container">
+                      <div class="login-content">
+                        <div class="login-form-header"> Login </div>
+                        <div class="login-form">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group">
+                                <label for="username" hidden="">Username <span class="required"></span></label>
+                                <div>
+                                  <input type="text" id="username" data-bind="value: LoginModel.EMail" placeholder="Email" class="form-control" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row" data-bind="visible: EMailMissing" style="display: none;">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group  clear-fix warnrow">
+                                <div class="alert alert-warning">Email is required</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group">
+                                <label for="password" hidden="">Password <span class="required"></span></label>
+                                <div>
+                                  <input id="password" class="form-control" type="password" data-bind="value: LoginModel.PasswordString" placeholder="Password" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row" data-bind="visible: PasswordMissing" style="display: none;">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group  clear-fix warnrow">
+                                <div class="alert alert-warning">Password is required</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 "> <a id="resetPasswordLink" href="https://cgicatsuidev.cgicledev.com/Shared/ResetPassword" data-bind="events: { click: ResetPassword }">Forgot/Reset Password?</a> </div>
+                            <!--<div class="col-xs-6 col-sm-6 col-md-6 login-form-actions text-right">
+                    <input type="checkbox" /> Keep me logged in</a>
+                </div>--> 
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                              <div class="form-group" align="center">
+                                <button type="button" class="btn login-button btn-cats-grey" data-bind="events: { click: Login }">LOGIN</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--end login-content--> 
+                      
+                    </div>
+                  </div>
+                  <!--end columnn--> 
+                </div>
+                <!--end row--> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- PAGE FOOTER -->
+<div data-id="footer" class="page-footer">
+  <div class="row" style=""><span style="color: #535353"></span><span style="color: rgba(51,51,51,0.65)"></span><span style="/* [disabled]color: rgba(51,51,51,0.37); */"></span>
+    <div class="col-xs-12 col-sm-12"> <a href="http://www.cgi.com/housing" target="_blank" class="txt-color-white">CGI Group Inc. © 2014-2017</a><span class="txt-color-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="http://www.cgi.com/web/en/global_privacy.htm" target="_blank" class="txt-color-white">Privacy Policy</a><span class="txt-color-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href="http://www.cgi.com/web/en/legal_restrictions.htm" target="_blank" class="txt-color-white">Terms of Use</a> </div>
+  </div>
+</div>
+<!-- END PAGE FOOTER -->
+
+<div id="login-dialog">
+  <div id="userPass-dialog" style="visibility: hidden"> <strong style="padding-top:10px; padding-left:10px">Your session has timed out, please re-enter your login credentials to continue</strong>
+    <div style="padding-top:10px; padding-left:10px">
+      <input type="text" placeholder="UserName" id="dialog-username" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
+      <input type="password" placeholder="Password" id="dialog-password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);">
+      <label id="dialog-login-error"></label>
+    </div>
+  </div>
+  <div id="chooseAccount-dialog" style="visibility: hidden "> <strong style="padding-top:10px; padding-left:10px">The last account that you logged in with was: <span id="dialog-accoutName"></span></strong>
+    <label>Account Name</label>
+    <select id="chooseAccount-dropdown">
+    </select>
+  </div>
+</div>
+<script src="CATS_files/jszip.js"></script> 
+<script src="CATS_files/kendojs"></script> 
+<script src="CATS_files/knockout"></script> 
+<script src="CATS_files/page.js" type="text/javascript"></script> 
+<script src="CATS_files/appHost.js" type="text/javascript"></script> 
+<script src="CATS_files/formatUtil.js" type="text/javascript"></script> 
+<script src="CATS_files/data.js" type="text/javascript"></script> 
+<script src="CATS_files/util.js" type="text/javascript"></script> 
+<script src="CATS_files/ui.js" type="text/javascript"></script> 
+<script src="CATS_files/events.js" type="text/javascript"></script> 
+<script src="CATS_files/global.js" type="text/javascript"></script> 
+<script src="CATS_files/loginDialog.js"></script> 
+<script src="CATS_files/ChoosingMenu.js"></script> 
+<script src="CATS_files/InquiryForm.js"></script> 
+<script src="CATS_files/InquiryNotes.js"></script> 
+<script src="CATS_files/inquiryData.js"></script> 
+<script src="CATS_files/listUtil.js"></script> 
+<script src="CATS_files/jquery-ui-combobox.js"></script> 
+<script src="CATS_files/list.js"></script> 
+<script src="CATS_files/Main.js"></script> 
+<script src="CATS_files/Contacts.js"></script> 
+<script src="CATS_files/ContractDetails.js"></script> 
+<script src="CATS_files/Inputs.js"></script> 
+<script src="CATS_files/ProcessingDetails.js"></script> 
+<script src="CATS_files/ARHistory.js"></script> 
+<script src="CATS_files/MilestoneNotes.js"></script> 
+<script src="CATS_files/EmailCorrespondence.js"></script> 
+<script src="CATS_files/ARDocuments.js"></script> 
+<script src="CATS_files/Budget.js"></script> 
+<script src="CATS_files/RCS.js"></script> 
+<script src="CATS_files/DebtService.js"></script> 
+<script src="CATS_files/OCAF.js"></script> 
+<script src="CATS_files/RentSchedule.js"></script> 
+<script src="CATS_files/UtilityAnalysis.js"></script> 
+<script src="CATS_files/select2.min.js"></script> 
+<script src="CATS_files/smartadminjs"></script>
+<style>
+    </style>
+<!--[if IE 8]>
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+    <![endif]--> 
+
+<script id="template_apphost_tab" type="text/x-kendo-template">
+    <a href="\#" class="list-group-item" data-bind="events: {click: select}"><span data-bind="text: Title" class="apphost-drop-title"></span>&nbsp;<span data-bind="text: SubTitle" class="apphost-drop-subtitle"></span></a>
+</script> 
+
+<!-- dialog box for error messages -->
+<div id="ui_errorMessageDialog" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Error</h4>
+      </div>
+      <!-- modal-header -->
+      <div class="modal-body">
+        <div id="ui_errorMessageDialog_Message"></div>
+      </div>
+      <!-- modal-body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      <!-- model-footer --> 
+    </div>
+    <!-- modal-content --> 
+  </div>
+</div>
+<!-- ui_errorMessageDialog --> 
+<!-- dialog box for confirmation messages -->
+<div id="ui_confirmDialog" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;Confirm</h4>
+      </div>
+      <!-- modal-header -->
+      <div class="modal-body">
+        <div id="ui_confirmDialog_Message"></div>
+      </div>
+      <!-- modal-body -->
+      <div class="modal-footer">
+        <button id="ui_confirmDialog_Yes" type="button" class="btn btn-primary">Yes</button>
+        <button id="ui_confirmDialog_No" type="button" class="btn btn-default">No</button>
+      </div>
+      <!-- model-footer --> 
+    </div>
+    <!-- modal-content --> 
+  </div>
+</div>
+<!-- ui_errorMessageDialog -->
+
+<div id="divSmallBoxes"></div>
+<div id="divMiniIcons"></div>
+<div id="divbigBoxes"></div>
+<script id="template_Login_edit" type="text/x-kendo-template">
+    <div data-role="page" data-id="Page_CATS_Sample2" >
+        <div role="form"  class="login_margin" >
+            <div data-id="fieldsContainer" data-bind="visible: LoginModel.notLoggedIn">
+                <div  class="center-block">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-4  col-lg-4 col-lg-offset-4" >
+                            <div class="login-container" >
+                            
+                                <div class="login-content">
+                                    <div class="login-form-header">
+                                        Login
+                                    </div>
+                                    <div class="login-form">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label for="username" hidden>Username <span class="required"></span></label>
+                                                    <div><input type="text" id="username" data-bind="value: LoginModel.EMail" placeholder="Email"  class="form-control" autocomplete="off"/></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" data-bind="visible: EMailMissing">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group  clear-fix warnrow">
+                                                    <div class="alert alert-warning">Email is required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label for="password" hidden>Password <span class="required"></span></label>
+                                                    <div><input id="password" class="form-control" type="password" data-bind="value: LoginModel.PasswordString" placeholder="Password" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" data-bind="visible: PasswordMissing">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group  clear-fix warnrow">
+                                                    <div class="alert alert-warning">Password is required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 ">
+                                                <a id="resetPasswordLink" href="/Shared/ResetPassword" data-bind="events: { click: ResetPassword }">Forgot/Reset Password?</a>
+                                            </div>
+                                            <!--<div class="col-xs-6 col-sm-6 col-md-6 login-form-actions text-right">
+                    <input type="checkbox" /> Keep me logged in</a>
+                </div>-->
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                                <div class="form-group" align="center">
+                                                    <button type="button" class="btn login-button btn-cats-grey" data-bind="events: { click: Login }">Login</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!--end login-content-->
+
+
+                            </div>
+
+
+                        </div>  <!--end columnn-->
+                    </div><!--end row-->
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+</body>
+</html>
